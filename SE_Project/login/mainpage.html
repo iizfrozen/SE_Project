@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Main Page v0.1</title>
+	<meta charset="utf-8" />
+ <link rel = "stylesheet"
+   type = "text/css"
+   href = "../css/SE.css" />
+   <style>
+		.request{
+			display:none;
+		}
+   </style>
+    <script src="mainpage.js"></script>
+</head>
+<body>
+    <fieldset id="tabsfieldset" class="tabsfieldset">
+        <legend id="tabslegend" class="tabslegend">Links</legend>
+        <div id="tabs" class="tabs">
+            <button class="dropbtn"><a class="tabbtns" href="loginpage.html">Log Out</a></button>
+            <button class="dropbtn"><a class="tabbtns" href="../admin/admin.html">Admin Access</a></button>
+            <button class="dropbtn"><a class="tabbtns" href="../patron/patron.html">Patron Management</a></button>
+			<button class="dropbtn"><a class="tabbtns" href="../clinic/ClinicOverview.html">Clinic Reservation</a></button>
+			<button class="dropbtn"><a class="tabbtns" href="../inventory_management/InvOverview.html">Inventory</a></button>
+       </div>
+    </fieldset>
+    <h2>Main Page</h2>
+    <br /><br />
+    <div id="checkin" class="checkin">
+        <div id="checkindiv">
+            <form class="checkinform">
+                Check in:<input type="text" id="checkin_text" />
+            </form>
+            <button onclick="checkin()">Check In</button>
+        </div>
+        <div id="checkinshow"></div>
+    </div>
+    <div id="request" class="request">
+        <div id="requestdiv">
+                <form class="requestform">
+                Request Suspension:<input type="text" id="request_text" />
+            </form>
+            <button onclick="request()">Request</button>
+        </div>
+        <div id="requestshow"></div>
+    </div>
+	<div id="error"></div>
+    <!--<img src="christmastree.png" style="width:150px;height:228px;"></img>-->
+</body>
+</html>

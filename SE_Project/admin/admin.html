@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Page</title>
+	<meta charset="utf-8" />
+	<script src="admin.js"></script>
+ <link rel = "stylesheet"
+   type = "text/css"
+   href = "../css/SE.css" />
+</head>
+<body>
+    <fieldset id="tabsfieldset" class="tabsfieldset">
+        <legend id="tabslegend" class="tabslegend">Links</legend>
+        <div id="tabs" class="tabs">
+            <button class="dropbtn"><a class="tabbtns" href="../login/loginpage.html">Log Out</a></button>
+            <button class="dropbtn"><a class="tabbtns" href="../login/mainpage.html">Main Page</a></button>
+            <button class="dropbtn"><a class="tabbtns" href="../patron/patron.html">Patron Management</a></button>
+			<button class="dropbtn"><a class="tabbtns" href="../clinic/ClinicOverview.html">Clinic Reservation</a></button>
+			<button class="dropbtn"><a class="tabbtns" href="../inventory_management/InvOverview.html">Inventory</a></button>
+       </div>
+    </fieldset>
+		<h2><font face="verdana">Admin Page</font></h2>
+		<form id="sform">
+			<fieldset>
+			<legend><font face="verdana">Search User</font></legend>
+			<label>
+				<font face="verdana">Search Name:</font><input type="text" name="search" id="search">
+			</label>
+			</fieldset>
+		</form>
+		<button onclick="norp()">Submit</button>
+		<div id="searchinfo"></div>
+		<form id="form1">
+			<fieldset>
+			<legend><font face="verdana">Change</font></legend>
+			<label id="changeusername">
+				<font face="verdana">Change Username:</font><input type="text" id="uname" name="uname">
+			</label><br>
+			<label>
+				<font face="verdana">Change Password:</font><input type="text" id="pass" name="pass">
+			</label><br>
+			</fieldset>
+		</form>
+		<button id="form1b" onclick="changeuser()">Submit Change</button>
+		
+		<form id="form5">
+			<fieldset>
+			<legend><font face="verdana">Add</font></legend>
+			<label>
+				<font face="verdana">Add Username:</font><input type="text" id="uname2" name="uname">
+			</label><br>
+			<label>
+				<font face="verdana">Add Password:</font><input type="text" id="pass2" name="pass">
+			</label><br>
+			</fieldset>
+		</form>
+		<button onclick="adduser()">Submit Add</button>
+		<form id="form4">
+			<fieldset>
+			<legend><font face="verdana">Delete User</font></legend>
+			<label>
+				<font face="verdana">Delete:</font><input type="text" name="deletename" id="deletename">
+			</label>
+			</fieldset>
+		</form>
+		<button onclick="deleteuser()">Submit Delete</button>
+		<div id="error"></div>
+		<div id="displayuserinfo"></div>
+		<a href="../login/mainpage.html"><font face="verdana">Exit</font></a>
+</body>
+</html>

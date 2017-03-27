@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<style>
+</style>
+<title>Patron Managment Page</title>
+<script src="patron.js"></script>
+
+ <link rel = "stylesheet"
+   type = "text/css"
+   href = "../css/SE.css" />
+   <style>
+	.edit{display:none;}
+   </style>
+</head>
+<body>
+
+    <fieldset id="tabsfieldset" class="tabsfieldset">
+        <legend id="tabslegend" class="tabslegend">Links</legend>
+        <div id="tabs" class="tabs">
+            <button class="dropbtn"><a class="tabbtns" href="../login/loginpage.html">Log Out</a></button>
+            <button class="dropbtn"><a class="tabbtns" href="../login/mainpage.html">Main Page</a></button>
+            <button class="dropbtn"><a class="tabbtns" href="../admin/admin.html">Admin Access</a></button>
+			<button class="dropbtn"><a class="tabbtns" href="../clinic/ClinicOverview.html">Clinic Reservation</a></button>
+			<button class="dropbtn"><a class="tabbtns" href="../inventory_management/InvOverview.html">Inventory</a></button>
+       </div>
+    </fieldset>
+	<h1>Patron Managment Page</h1>
+	
+	<div id="error1"></div>
+	<div id="error"></div>
+	<div id="displayuserinfo"></div>
+	<div id="searchinfo"></div>
+	<form action="action_page.php"></br></br></br>
+		<fieldset>
+			<legend><font face="verdana">Add patron</font></legend>
+			<label><font face="verdana">First name:</font><input type="text" name="firstname" id="firstname" value= ""></label><br>
+			<label><font face="verdana">Last name:</font><input type="text" name="lastname" id="lastname" value= ""></label><br>
+			<label><font face="verdana">ID number:</font><input type="text" name="IDnumber" id="id" value= ""></label><br>
+			<label><font face="verdana">Address:</font><input type="text" name="address" id="address" value=""></label><br>
+		</fieldset>
+	</form>
+	<button type="button" onclick="addpatron()">Submit</button><br>
+	
+	
+	
+	
+	
+	
+	<form action="action_page.php" class="edit">
+		<fieldset>
+			<legend><font face="verdana">Edit patron</font></legend>
+			<label><font face="verdana">ID number:</font><input type="text" name="IDnumber" value= ""></label><br>
+		</fieldset>
+	</form>
+	<!--<button type="button" onclick="">Submit</button>!-->
+	
+	
+	<form action="action_page.php">
+		<fieldset>
+			<legend><font face="verdana">Search patron</font></legend>
+			<label><font face="verdana">ID number:</font><input type="text" name="IDnumber" id="sid" value= ""></label><br>
+			<label><font face="verdana">Name:</font><input type="text" name="sname" id="sname" value= ""></label><br>
+		</fieldset>
+	</form>
+	<button onclick="norp()">Search by ID</button><button onclick="norp2()">Search by Name</button>
+	
+	
+	
+	<form action="action_page.php">
+		<fieldset>
+			<legend><font face="verdana">Delete patron</font></legend>
+			<label><font face="verdana">ID number:</font><input type="text" name="IDnumber" id="did" value= ""></label><br>
+		</fieldset>
+	</form>
+	<button type="button" onclick="deletepatron()">Submit</button>
+	
+</body>
+</html>

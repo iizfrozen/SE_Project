@@ -1,0 +1,88 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+	
+ <link rel = "stylesheet"
+   type = "text/css"
+   href = "../css/SE.css" />
+    <style>
+        .button {
+            background-color: #008CBA; /* Blue */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button1 {
+            background-color: #008CBA;
+            color: black;
+            border: 2px solid #4CAF50;
+        }
+
+            .button1:hover {
+                background-color: white;
+                color: black;
+            }
+    </style>
+    <title>Clinic Management Page</title>
+	<script src="item_functions.js"></script>
+</head>
+<body onload = "display_All_Items()">
+	<fieldset id="tabsfieldset" class="tabsfieldset">
+        <legend id="tabslegend" class="tabslegend">Links</legend>
+        <div id="tabs" class="tabs">
+            <button class="dropbtn"><a class="tabbtns" href="../login/loginpage.html">Log Out</a></button>
+            <button class="dropbtn"><a class="tabbtns" href="../login/mainpage.html">Main Page</a></button>
+            <button class="dropbtn"><a class="tabbtns" href="../admin/admin.html">Admin Access</a></button>
+            <button class="dropbtn"><a class="tabbtns" href="../patron/patron.html">Patron Management</a></button>
+			<button class="dropbtn"><a class="tabbtns" href="../clinic/ClinicOverview.html">Clinic Reservation</a></button>
+       </div>
+    </fieldset>
+    <h1>Inventory Overview</h1>
+	<h2>Browse Inventory</h2>
+		<div id = "results"> </div> 
+		<div id = "error"> </div>
+		
+	<form id = "add item form" method = "get" action="action_page.php">
+			<fieldset>
+				<legend><font face="verdana">Add Inventory</font></legend>
+				<label>
+					<font face="verdana">Item Description:</font><br>
+					<input type="text" id="itemdesc" ><br>
+					<font face="verdana">Product Lifetime (days):</font><br>
+					<input type="text" id="itemlife"  ><br>
+					<font face="verdana">Product ID:</font> <br>
+					<input type="text" id="itemid"  ><br>
+				</label>
+			</fieldset>
+	</form>
+	<button type="button" onclick="additem()" >Submit</button></br>
+	
+	<form action="action_page.php">
+		<fieldset>
+			<legend><font face="verdana">Search Inventory</font></legend>
+			<label>
+				<font face="verdana">ID number:</font><br>
+				<input type="text" name="IDnumber" id="sid" value= ""><br>
+				<font face="verdana">Item description:</font><br>
+				<input type="text" name="IDnumber" id="s_description" value= ""><br>
+			</label>
+		</fieldset>
+	</form>
+	<button type="button" onclick="searchItemsById()">Search By ID</button>
+	<button type="button" onclick="searchItemsByDescription()">Search by Name</button>
+	
+	
+	
+	
+	<div id="searchByDescriptionInfo"></div>
+	<div id="searchinfo"></div></br>
+</body>
+</html>

@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<head>
+	<link rel = "stylesheet" type = "text/css" href = "../css/SE.css" />
+    <script>
+        var xmlHttp;
+        function submitButton() {
+            var name = document.getElementById("username").value;
+            var pass = document.getElementById("password").value;
+            xmlHttp = GetXmlHttpObject();
+            if(xmlHttp==null)
+            {
+                document.getElementById("display").innerHTML = "Error";
+                return;
+            }
+            xmlHttp.onreadystatechange = function () {
+                var response = xmlHttp.responseText;
+                if (response == pass && response != "") {
+                    if (name) {
+                        document.getElementById("display").innerHTML = "";
+                        document.getElementById("password").value = "";
+                        document.getElementById("form1").submit();
+                    }
+                }
+                else if (response == "") {
+                    document.getElementById("display").innerHTML = "Invalid login info";
+                }
+            }
+            xmlHttp.open("GET", "login.php?uname=" + name, true);
+            xmlHttp.send();
+        }
+        function GetXmlHttpObject() {
+            xmlHttp = null;
+            if (window.XMLHttpRequest) {
+                xmlHttp = new XMLHttpRequest();
+            }
+            else {
+                xmlHttp = new ActiveXObject("Microsoft.XMLHTTP")
+            }
+            return xmlHttp;
+        }
+    </script>
+    <style>
+        .center {
+            margin: auto;
+            height: 50%;
+            width: 50%;
+            border: 3px solid green;
+            padding: 10px;
+        }
+    </style>
+
+</head>
+<body>
+	</br>
+	</br>
+	</br>
+	</br>
+    <center>
+        <div>
+            <form id="form1" method="get" action="mainpage.html">
+                <!---->
+                User Name:<br>
+                <input type="text" id="username" name="username"><br>
+                Password:<br>
+                <input type="password" id="password" name="password">
+            </form>
+            <button type="button" id="submit" onclick="submitButton()">
+                Submit
+            </button>
+        </div>
+        <p id="test">
+    <div id="passs"></div>
+        </p>
+    </center>
+   <div id="display"></div>
+    <div id="response"></div>
+
+</body>
+</html>

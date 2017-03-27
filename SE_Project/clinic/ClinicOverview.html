@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clinic Management Page</title>
+	<link rel = "stylesheet" type = "text/css" href = "../css/SE.css" />
+    <script src="ClinicOverview.js"></script>
+</head>
+<body >
+    <fieldset id="tabsfieldset" class="tabsfieldset">
+        <legend id="tabslegend" class="tabslegend">Links</legend>
+        <div id="tabs" class="tabs">
+            <button class="dropbtn"><a class="tabbtns" href="../login/loginpage.html">Log Out</a></button>
+            <button class="dropbtn"><a class="tabbtns" href="../login/mainpage.html">Main Page</a></button>
+            <button class="dropbtn"><a class="tabbtns" href="../admin/admin.html">Admin Access</a></button>
+            <button class="dropbtn"><a class="tabbtns" href="../patron/patron.html">Patron Management</a></button>
+			<button class="dropbtn"><a class="tabbtns" href="../inventory_management/InvOverview.html">Inventory</a></button>
+       </div>
+    </fieldset></br></br>
+	<h1>Clinic Overview</h1></br>
+	<button onclick="displayClinic()">Click to display scheduled clinics</button></br>
+	<div id="displayclinics"></div>
+	</br>
+	
+	<form>
+		<fieldset>
+			<legend><font face="verdana">Add New Clinic</font></legend>
+			<label for="Clinicname"><font face="verdana">Clinic Name:</font><input type="text" name="Clinicname" id="Clinicname" value=" "></label><br>
+			<label for="Clinicname"><font face="verdana">Clinic Date (mm/dd/yyyy):</font><input type="text" name="date" id="date" value=" "></label><br>
+			<label for="Clinicname"><font face="verdana">Clinic Time:</font><input type="text" name="time" id="time" value=" "></label><br>
+			<label for="Clinicname"><font face="verdana">Clinic Capacity:</font><input type="text" name="capacity" id="capacity" value=" "></label><br>
+			<label for="Clinicname"><font face="verdana">Clinic Instructor:</font><input type="text" name="instructor" id="instructor" value=" "></label><br>
+		</fieldset>
+	</form>
+	
+	<button type="button" onclick="addClinic()">Submit</button><br>
+	
+    <div id="error"></div>
+    <div id="displayClinic"></div>
+</body>
+</html>
