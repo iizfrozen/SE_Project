@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Page</title>
+	<meta charset="utf-8" />
+	<script src="reports.js"></script>
+ <link rel = "stylesheet"
+   type = "text/css"
+   href = "../css/SE.css" />
+</head>
+<body>
+    <fieldset id="tabsfieldset" class="tabsfieldset">
+        <legend id="tabslegend" class="tabslegend">Links</legend>
+        <div id="tabs" class="tabs">
+            <button class="dropbtn"><a class="tabbtns" href="../login/loginpage.html">Log Out</a></button>
+            <button class="dropbtn"><a class="tabbtns" href="../login/mainpage.html">Main Page</a></button>
+			<button class="dropbtn"><a class="tabbtns" href="../admin/admin.html">Admin Access</a></button>
+            <button class="dropbtn"><a class="tabbtns" href="../patron/patron.html">Patron Management</a></button>
+			<button class="dropbtn"><a class="tabbtns" href="../clinic/ClinicOverview.html">Clinic Reservation</a></button>
+			<button class="dropbtn"><a class="tabbtns" href="../inventory_management/InvOverview.html">Inventory</a></button>
+       </div>
+    </fieldset>
+		<h2><font face="verdana">Reports Page</font></h2>
+		<form id="pform">
+			<fieldset>
+			<legend><font face="verdana">Patron Reports</font></legend>
+			<label>
+				<br/>File Name:<input type="text" id="patron_filename" />
+			</label>
+			</fieldset>
+		</form>
+		<button onclick="patronreport()">Submit</button>
+		<form id="cform">
+			<fieldset>
+			<legend><font face="verdana">Check In Reports</font></legend>
+			<label>
+				<br/>File Name:<input type="text" id="checkin_filename" />
+			</label>
+			</fieldset>
+		</form>
+		<button onclick="checkinreport()">Submit</button>
+		<div id="error"></div>
+		<div id="displayuserinfo"></div>
+		<a href="../login/mainpage.html"><font face="verdana">Exit</font></a>
+</body>
+</html>

@@ -6,11 +6,6 @@
  <link rel = "stylesheet"
    type = "text/css"
    href = "../css/SE.css" />
-   <style>
-		.request{
-			display:none;
-		}
-   </style>
     <script src="mainpage.js"></script>
 </head>
 <body>
@@ -22,15 +17,30 @@
             <button class="dropbtn"><a class="tabbtns" href="../patron/patron.html">Patron Management</a></button>
 			<button class="dropbtn"><a class="tabbtns" href="../clinic/ClinicOverview.html">Clinic Reservation</a></button>
 			<button class="dropbtn"><a class="tabbtns" href="../inventory_management/InvOverview.html">Inventory</a></button>
+			<button class="dropbtn"><a class="tabbtns" href="../reportpage/reports.html">Reports</a></button>
        </div>
     </fieldset>
     <h2>Main Page</h2>
     <br /><br />
+	<div id="checkinall"></div>
+	<button onclick="showallcheckin()">Show Checked In</button><br/>
+	<br/>
     <div id="checkin" class="checkin">
         <div id="checkindiv">
             <form class="checkinform">
-                Check in:<input type="text" id="checkin_text" />
-            </form>
+				<fieldset>
+                <legend><font face="verdana">Check in:</font></legend>
+					<label>
+						<font face="verdana">First Name:</font><input type="text" id="checkin_fname" /><br/>
+					</label>
+					<label>
+						<font face="verdana">Last Name:</font><input type="text" id="checkin_lname" /><br/>
+					</label>
+					<label>
+						<font face="verdana">ID:</font><input type="text" id="checkin_id"/><br/>
+					</label>
+				</fieldset>
+			</form>
             <button onclick="checkin()">Check In</button>
         </div>
         <div id="checkinshow"></div>
@@ -38,11 +48,47 @@
     <div id="request" class="request">
         <div id="requestdiv">
                 <form class="requestform">
-                Request Suspension:<input type="text" id="request_text" />
-            </form>
-            <button onclick="request()">Request</button>
+					<fieldset>
+						<legend><font face="verdana">Request Suspension:</font></legend>
+						<label>
+							<font face="verdana">First Name:</font><input type="text" id="request_fname" /><br/>
+						</label>
+						<label>
+							<font face="verdana">Last Name:</font><input type="text" id="request_lname" /><br/>
+						</label>
+						<label>
+							<font face="verdana">ID:</font><input type="text" id="request_id" /><br/>
+						</label>
+						<label>
+							<font face="verdana">Type:<br/></font><input type="radio" id="request_type1" name="request_radio" value="1"/> 1<br/>
+							<input type="radio" id="request_type2" name="request_radio" value="2"/> 2<br/>
+							<input type="radio" id="request_type3" name="request_radio" value="3"/> 3<br/>
+						</label>
+					</fieldset>
+				</form>
+				<button onclick="request()">Request</button>
         </div>
         <div id="requestshow"></div>
+    </div>
+    <div id="remove" class="remove">
+        <div id="removediv">
+                <form class="removeform">
+					<fieldset>
+						<legend><font face="verdana">Remove Suspension:</font></legend>
+						<label>
+							<font face="verdana">First Name:</font><input type="text" id="remove_fname" /><br/>
+						</label>
+						<label>
+							<font face="verdana">Last Name:</font><input type="text" id="remove_lname" /><br/>
+						</label>
+						<label>
+							<font face="verdana">ID:</font><input type="text" id="remove_id" /><br/>
+						</label>
+					</fieldset>
+				</form>
+				<button onclick="remove()">Remove</button>
+        </div>
+        <div id="removeshow"></div>
     </div>
 	<div id="error"></div>
     <!--<img src="christmastree.png" style="width:150px;height:228px;"></img>-->
